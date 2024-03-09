@@ -1,8 +1,7 @@
 import useUser from "~/hooks/useUser";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { api } from "~/utils/api";
+import { signIn, signOut } from "next-auth/react";
 import { classNames } from "~/utils/classNames";
 import Image from "next/image";
 import { HiChevronDown } from "react-icons/hi2";
