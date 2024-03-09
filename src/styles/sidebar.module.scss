@@ -1,0 +1,64 @@
+.list {
+    @apply flex flex-col items-center gap-4
+}
+
+.li {
+    @apply w-full relative p-4 text-lg  hover:bg-primary-light bg-primary-light text-primary-content;
+
+    border-radius: 100vw 0 0 100vw;
+    transition: all 500ms;
+
+    p {
+        @apply transition-transform duration-300;
+    }
+
+    &:hover p {
+        @apply translate-x-1 ;
+    }
+}
+
+
+.liActive {
+    @apply bg-background hover:bg-background text-primary
+}
+
+$size: 1rem;
+
+.li::after, .li::before {
+    content: '';
+    width: $size;
+    height: $size;
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    display: block;
+    border-radius: 0vw;
+    background-color: transparent;
+    transition: border-radius 100ms , box-shadow 500ms ;
+}
+
+.li::after {
+    bottom: calc($size * -1);
+    box-shadow: 5px -5px 0 5px rgb(155 105 241);
+}
+
+.li::before {
+    top: calc($size * -1);
+    box-shadow: 5px 5px 0 5px rgb(155 105 241)  ;    
+}
+
+.li.liActive::before, .li.liActive::after {
+    transition: border-radius 5s, box-shadow 500ms;
+
+}
+
+.li.liActive::before {
+    border-radius: 0vw 0vw 100vw 0vw ;
+    box-shadow: 5px 5px 0 5px #efeff1;    
+}
+
+.li.liActive::after {
+    border-radius: 0 100vw 0  0;
+    box-shadow: 5px -5px 0 5px #efeff1;
+}
+
